@@ -1,10 +1,8 @@
-import { useDeferredValue } from 'react';
 import { useRenderPDF } from './useRenderPDF';
 
 // eslint-disable-next-line react/prop-types
-export const RenderedPDFViewer = ({ style, className, text: outerText, innerRef, showToolbar = true, ...props }) => {
-  const text = useDeferredValue(outerText);
-  const { url, loading, error } = useRenderPDF({ text });
+export const RenderedPDFViewer = ({ style, className, showToolbar = true, ...props }) => {
+  const { url, loading, error } = useRenderPDF();
 
   const src = url ? `${url}#toolbar=${showToolbar ? 1 : 0}` : null;
   if (loading)
@@ -26,7 +24,6 @@ export const RenderedPDFViewer = ({ style, className, text: outerText, innerRef,
   return (
     <iframe
       src={src}
-      ref={innerRef}
       style={style}
       className={className}
       {...props}

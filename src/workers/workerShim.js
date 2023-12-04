@@ -10,3 +10,11 @@ if (import.meta.env.DEV) {
   window.$RefreshSig$ = () => (type) => type;
   window.__vite_plugin_react_preamble_installed__ = true;
 }
+
+//! If using create-react-app
+// import RefreshRuntime from 'react-refresh/runtime';
+// if (process.env.NODE_ENV === 'development') {
+//   RefreshRuntime.injectIntoGlobalHook(window);
+//   window.$RefreshReg$ = () => {};
+//   window.$RefreshSig$ = () => (type) => type;
+//   window.__vite_plugin_react_preamble_installed__ = true;

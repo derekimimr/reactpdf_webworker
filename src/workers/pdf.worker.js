@@ -1,19 +1,17 @@
 import { expose } from 'comlink';
-// import { expose } from 'react-worker-components';
 import './workerShim';
-let log = console.info;
 
 const renderPDFInWorker = async (props) => {
   try {
     const { renderPDF } = await import('../renderPDF');
+
+    // URL.createObjectURL() is used to create an object URL from a Blob object 
     return URL.createObjectURL(await renderPDF(props));
+    
   } catch (error) {
-    log(error);
+    console.log(error);
     throw error;
   }
 };
 
-// const onProgress = (cb) => (log = cb);
-
-// expose({ renderPDFInWorker: renderPDFInWorker, onProgress });
 expose({ renderPDFInWorker })
