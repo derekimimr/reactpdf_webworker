@@ -1,4 +1,5 @@
 import { expose } from 'comlink';
+// import { expose } from 'react-worker-components';
 import './workerShim';
 let log = console.info;
 
@@ -12,6 +13,7 @@ const renderPDFInWorker = async (props) => {
   }
 };
 
-const onProgress = (cb) => (log = cb);
+// const onProgress = (cb) => (log = cb);
 
-expose({ renderPDFInWorker: renderPDFInWorker, onProgress });
+// expose({ renderPDFInWorker: renderPDFInWorker, onProgress });
+expose({ renderPDFInWorker })
