@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { saveAs } from 'file-saver';
+// import { saveAs } from 'file-saver';
 import { RenderedPDFViewer } from './RenderedPDFViewer';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div style={{ display: 'flex', flexDirection: 'column' }}>
 
     <input value={text} onChange={(e) => setText(e.target.value)} />
-
+{/* 
     <button
       onClick={async () => {
         const { renderPDF } = await import('./renderPDF');
@@ -18,7 +18,7 @@ function App() {
       }}
     >
       Download
-    </button>
+    </button> */}
 
     <RenderedPDFViewer
       style={{ backgroundColor: 'grey', width: '500px', height: '760px' }}
