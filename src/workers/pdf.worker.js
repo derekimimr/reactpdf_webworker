@@ -15,8 +15,3 @@ const renderPDFInWorker = async (props) => {
 const onProgress = (cb) => (log = cb);
 
 expose({ renderPDFInWorker: renderPDFInWorker, onProgress });
-
-// export type WorkerType = {
-//   renderPDFInWorker: typeof renderPDFInWorker;
-//   onProgress: typeof onProgress;
-// };
